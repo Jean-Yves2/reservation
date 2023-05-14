@@ -1,0 +1,23 @@
+{
+  "name": "reservation",
+  "version": "1.0.0",
+  "description": "API REST / mise en pratique des différente méthode de création et  test de connaissance de sur les API REST",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "espress": "^0.0.0",
+    "sequelize": "^6.31.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
