@@ -1,0 +1,8 @@
+### Test serveur
+
+GET http://localhost:3000/
+
+
+### Test recuperartion de l'utilisateur
+
+GET http://localhost:3000/room/1
