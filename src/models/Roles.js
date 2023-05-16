@@ -2,9 +2,9 @@ const { DataTypes, Model } = require('sequelize');
 const sequelize = require("../sequelize_connection");
 
 
-class Role extends Model { }
+class Roles extends Model { }
 
-Role.init({
+Roles.init({
 
     name: {
 
@@ -14,9 +14,9 @@ Role.init({
 },
     {
         sequelize,
-        tableName: "role"
+        tableName: "roles"
     }
 );
 
 
-module.exports = Role;
+module.exports = Roles;

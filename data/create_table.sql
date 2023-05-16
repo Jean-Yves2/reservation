@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS "users","reservation","rooms","role" ;
+DROP TABLE IF EXISTS "users","reservations","rooms","roles" ;
 
 
 CREATE TABLE "rooms"(
@@ -12,7 +12,7 @@ CREATE TABLE "rooms"(
 );
 
 
-CREATE TABLE "reservation"(
+CREATE TABLE "reservations"(
 "id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 
 "start_time" DATE NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE "reservation"(
 "updated_at" timestamptz
 );
 
-CREATE TABLE "role"(
+CREATE TABLE "roles"(
 "id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 "name" TEXT NOT NULL
 );
@@ -32,8 +32,8 @@ CREATE TABLE "users"(
 "first_name" TEXT NOT NULL,
 "last_name" TEXT NOT NULL,
 "password" TEXT NOT NULL,
-"role_id" INTEGER NOT NULL REFERENCES "role"("id"),
-"reservation_id" INTEGER NOT NULL REFERENCES "reservation"("id"),
+"roles_id" INTEGER NOT NULL REFERENCES "roles"("id"),
+"reservations_id" INTEGER NOT NULL REFERENCES "reservations"("id"),
 "created_at" timestamptz NOT NULL DEFAULT now(),
 "updated_at" timestamptz
 );
@@ -42,16 +42,16 @@ INSERT INTO "rooms" ("name","capacity") VALUES
 ('dancing',15),
 ('opera',100);
 
-INSERT INTO "reservation" ("start_time","end_time","rooms_id") VALUES
+INSERT INTO "reservations" ("start_time","end_time","rooms_id") VALUES
 ('2023-05-15','2023-05-16',1),
 ('2023-05-16','2023-05-17',2);
 
-INSERT INTO "role" ("name") VALUES
+INSERT INTO "roles" ("name") VALUES
 ('visiteur'),
 ('administrateur'),
 ('menber');
 
-INSERT INTO "users" ("first_name","last_name","password","role_id","reservation_id") VALUES
+INSERT INTO "users" ("first_name","last_name","password","roles_id","reservations_id") VALUES
 ('test','test','test',2,1);
 
 COMMIT;

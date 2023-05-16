@@ -2,9 +2,9 @@ const { DataTypes, Model } = require('sequelize');
 const sequelize = require("../sequelize_connection");
 
 
-class Reservation extends Model { }
+class Reservations extends Model { }
 
-Reservation.init({
+Reservations.init({
 
     start_time: {
 
@@ -24,8 +24,8 @@ Reservation.init({
 },
     {
         sequelize,
-        tableName: "reservation"
+        tableName: "reservations"
     });
 
 
-module.exports = Reservation;
+module.exports = Reservations;
