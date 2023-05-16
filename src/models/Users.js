@@ -20,12 +20,12 @@ Users.init({
         type:DataTypes.STRING,
         allowNull:false
     },
-    role_id: {
+    roles_id: {
 
         type:DataTypes.INTEGER,
         allowNull:false
     },
-    reservation_id: {
+    reservations_id: {
 
         type:DataTypes.INTEGER,
         allowNull:false
